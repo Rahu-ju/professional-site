@@ -15,8 +15,11 @@ RUN pip install -r requirements.txt
 # Copy project files
 COPY . /app/
 
+# make static_root folder before running collectstatic
+RUN mkdir -p /app/static_root
+
 # collect static files on build time
-RUN yes | python manage.py collectstatic
+RUN python manage.py collectstatic --noinput
 
 # Expose port (Render uses $PORT environment variable)
 EXPOSE 10000
