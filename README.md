@@ -20,15 +20,15 @@ A Django web application containerized with Docker for development and its Produ
 
 ## installation
 
-1. Clone the repo
+1.Clone the repo
 
 ```git clone https://github.com/Rahu-ju/professional-site.git```
 
-2. Create .env and .env.prod file same as .env.example but for .env.prod write 
+2.Create .env and .env.prod file same as .env.example but for .env.prod write 
 
 ```DEBUG = False```
 
-3. Spin up the development container
+3.Spin up the development container
 
 ```docker compose up --build```
 
