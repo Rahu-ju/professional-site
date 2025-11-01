@@ -1,0 +1,14 @@
+# Django Framework
+Django==5.1.2
+
+# Environment variables management
+python-decouple==3.8
+
+# for dend mail
+sendgrid==6.12.5
+
+# for serving static files in production
+whitenoise==6.11.0
+
+# production grade server
+gunicorn==23.0.0

@@ -1,0 +1,561 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imran - Python Developer</title>
+    <script src="{% static 'pages/tailwind.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes slideText {
+            0%, 33% { transform: translateY(0); }
+            38%, 71% { transform: translateY(-100%); }
+            76%, 100% { transform: translateY(-200%); }
+        }
+        
+        .animated-info {
+            height: 1.5em;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .animated-item {
+            display: block;
+            animation: slideText 9s infinite;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-[#141413] text-gray-100">
+    <!-- Top Navigation -->
+    <nav class="bg-[#1f1e1d] border-b border-gray-800 hover:border-gray-700 transition-all sticky top-0 z-50 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-9 h-9 bg-amber-600 text-white rounded flex items-center justify-center text-xl font-semibold">
+                        R
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-400 hover:text-amber-500 font-medium transition-colors">Home</a>
+                    <a href="#about-me" class="text-gray-400 hover:text-amber-500 font-medium transition-colors">About me</a>
+                    <a href="#projects" class="text-gray-400 hover:text-amber-500 font-medium transition-colors">Projects</a>
+                    <a href="#skillsets" class="text-gray-400 hover:text-amber-500 font-medium transition-colors">Skills</a>
+                    <a href="#education" class="text-gray-400 hover:text-amber-500 font-medium transition-colors">Education</a>
+                    <a href="#mail-me" class="text-gray-400 hover:text-amber-500 font-medium transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Left Sidebar -->
+            <aside class="lg:col-span-1">
+                <div class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all overflow-hidden sticky top-24">
+                    <div class="p-6 border-b border-gray-800">
+                        <img src="{% static "pages/HeadShotMe.JPG" %}" alt="Imran Hossain Rahu" class="w-20 h-20 rounded-full object-cover mb-4">
+                        <h5 class="text-2xl font-semibold mb-2 text-white">Imran Hossain Rahu</h5>
+                        <p class="text-md text-gray-400">Full-stack Developer | Python, Django, RESTful APIs, PostgreSQL | AWS, GCP</p>
+                    </div>
+                    <nav class="py-2 hidden md:block">
+                        <a href="#home" class="flex items-center px-6 py-3 text-gray-400 hover:bg-gray-900 hover:text-white border-l-4 border-transparent hover:border-amber-500 transition-all sidebar-nav-item active">
+                            <i class="fas fa-th-large w-5 mr-3"></i>
+                            Home
+                        </a>
+                        <a href="#about-me" class="flex items-center px-6 py-3 text-gray-400 hover:bg-gray-900 hover:text-white border-l-4 border-transparent hover:border-amber-500 transition-all sidebar-nav-item">
+                            <i class="fas fa-folder w-5 mr-3"></i>
+                            About me
+                        </a>
+                        <a href="#projects" class="flex items-center px-6 py-3 text-gray-400 hover:bg-gray-900 hover:text-white border-l-4 border-transparent hover:border-amber-500 transition-all sidebar-nav-item">
+                            <i class="fas fa-briefcase w-5 mr-3"></i>
+                            Projects
+                        </a>
+                        <a href="#mail-me" class="flex items-center px-6 py-3 text-gray-400 hover:bg-gray-900 hover:text-white border-l-4 border-transparent hover:border-amber-500 transition-all sidebar-nav-item">
+                            <i class="fas fa-user w-5 mr-3"></i>
+                            Mail me
+                        </a>
+                    </nav>
+                    <div class="hidden md:flex items-center justify-around p-4 border-t border-gray-800">
+                        <a href="https://github.com/Rahu-ju" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-lg border border-amber-600 text-amber-500 hover:bg-amber-900/20 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/rahu" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-lg border border-amber-600 text-amber-500 hover:bg-amber-900/20 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#mail-me" class="text-amber-500 hover:text-amber-400 font-semibold text-sm transition-colors">Questions?</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:col-span-3 space-y-6">
+                <!-- Hero Section -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="home">
+                    <div class="flex flex-col md:flex-row items-center gap-8 mb-6">
+                        <div class="flex-1">
+                            <h4 class="text-2xl font-semibold mb-2 text-white">Welcome, I'm</h4>
+                            <div class="animated-info text-xl font-semibold mb-2">
+                                <span class="animated-item text-amber-500">Imran Hossain Rahu</span>
+                                <span class="animated-item text-amber-500">Full-Stack Developer</span>
+                                <span class="animated-item text-amber-500">Python | Django | AWS</span>
+                            </div>
+                            <p class="text-base text-gray-400">As a Full-Stack <span class="text-white">Python</span> Developer, I specialize in <span class="text-white">Django, DRF </span> and <span class="text-white">PostgreSQL</span>, with HTML, CSS, and JavaScript, from concept to <span class="text-white">deployment</span> in <span class="text-white">AWS</span>, GCP.</p>
+                        </div>
+                        <div class="hidden md:block flex-1">
+                            <img src="{% static 'pages/HeadShotMe.JPG' %}" alt="Profile" class="w-64 h-64 rounded-full object-cover mx-auto">
+                        </div>
+                    </div>
+                    <div class="inline-block bg-gray-900 text-gray-400 px-4 py-2 rounded-full text-sm mb-4">
+                        Response time within 24 hours.
+                    </div>
+                    <div class="flex gap-3 flex-wrap">
+                        <button class="px-6 py-2 border border-amber-500 text-amber-500 rounded-full font-semibold hover:bg-amber-900/20 transition-colors">View Resume</button>
+                        <button class="px-6 py-2 border border-amber-500 text-amber-500 rounded-full font-semibold hover:bg-amber-900/20 transition-colors"><a href="#mail-me">Mail me</a></button>
+                    </div>
+                </section>
+
+                <!-- About Me -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="about-me">
+                    <h5 class="text-2xl font-semibold mb-4 text-white">About Me</h5>
+                    <div class="space-y-4 text-gray-400 text-base">
+                        <p>I'm a full-stack developer with an unconventional story.</p>
+                        <p>I studied Physics at Jahangirnagar University-savar, Dhaka, Bangladesh, exploring the laws that govern our universe. But along the way, I taught myself Python, fell in love with Django for creating web applications.</p>
+                        <p>Today, I specialize in building full-stack web applications from concept to deployment. Whether it's an e-commerce platform with payment integration or a content-sharing platform, I handle everything from Database design, Backend logic, API design, to the User Interfaces.</p>
+                        <p><strong class="text-white">What drives me?, </strong> The satisfaction of turning an idea into a working product, which people actually using it. Optimizing database queries, designing RESTful APIs, or crafting intuitive user experiences.</p>
+                        <p>I believe great software solves real problems elegantly. Every project I build reflects that philosophy.</p>
+                        <p>When I'm not coding, you'll find me playing guitar, hiking mountains, or exploring new technologies.</p>
+                        <p><strong class="text-white">Currently, </strong>I'm expanding my expertise in cloud infrastructure. I'm open to opportunities where I can create meaningful impact and grow as a developer.</p>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="projects">
+                    <h5 class="text-2xl font-semibold mb-2 text-white">What I Build</h5>
+                    <p class="text-gray-400 mb-6">On the way of my Learning, I build several real life projects.</p>
+
+                    <!-- Project 1 -->
+                    <div class="border border-gray-800 rounded-xl p-6 mb-6 hover:border-gray-700 transition-all">
+                        <div class="flex justify-between items-start flex-wrap gap-4 mb-4">
+                            <div>
+                                <h5 class="text-xl font-semibold mb-1 text-white">Clothing Classic</h5>
+                                <p class="text-white text-xs">E-commerce Web Application</p>
+                            </div>
+                            <a href="https://github.com/Rahu-ju/onlineShopping" target="_blank" class="px-4 py-2 border border-amber-500 text-amber-500 rounded-full text-sm font-semibold hover:bg-amber-900/20 transition-colors">
+                                <i class="fab fa-github mr-1"></i>View Code
+                            </a>
+                        </div>
+                        <p class="text-base font-semibold mb-4 text-gray-300">A full-featured online shopping platform with product management, shopping cart, and secure checkout.</p>
+                        
+                        <div class="space-y-4 text-base text-gray-400">
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">The Challenge</h6>
+                                <p>Small businesses need affordable e-commerce solutions without the recurring costs of platforms like Shopify. They need custom features tailored to their specific needs.</p>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">My Solution</h6>
+                                <p class="mb-2">I built a scalable Django-based e-commerce platform that handles the complete shopping experience:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Product catalog with categories, filtering, and search</li>
+                                    <li>User authentication, Shopping cart with session handling, profile management</li>
+                                    <li>Admin dashboard for product and Order management</li>
+                                    <li>Currently integrating Stripe payment gateway for secure transactions</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">Technical Highlights</h6>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Implemented custom user authentication with email verification using Django-allauth</li>
+                                    <li>Optimized database queries using select_related() and prefetch_related()</li>
+                                    <li>Containerized with Docker for consistent development and deployment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="border border-gray-800 rounded-xl p-6 mb-6 hover:border-gray-700 transition-all">
+                        <div class="flex justify-between items-start flex-wrap gap-4 mb-4">
+                            <div>
+                                <h5 class="text-xl font-semibold text-white mb-1">ForWriters</h5>
+                                <p class="text-white text-xs">Content Sharing Platform</p>
+                            </div>
+                            <a href="https://forwriters.onrender.com" target="_blank" class="px-4 py-2 border border-amber-500 text-amber-500 rounded-full text-sm font-semibold hover:bg-amber-900/20 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                        </div>
+                        <p class="text-base font-semibold mb-4 text-gray-300">A community-driven platform where writers publish articles, engage with readers, and build their audience.</p>
+                        
+                        <div class="space-y-4 text-base text-gray-400">
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">The Challenge</h6>
+                                <p>Writers need a distraction-free platform focused on quality content rather than social media noise.</p>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">My Solution</h6>
+                                <p class="mb-2">I created a full-stack publishing platform that puts content first:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Rich text editor for creating and publishing articles</li>
+                                    <li>Social engagement features (likes, comments, nested replies)</li>
+                                    <li>Responsive design optimized for reading</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">Technical Implementation</h6>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Built with Django framework and SQLite database</li>
+                                    <li>Designed efficient database relationships for social features</li>
+                                    <li>Mobile-first responsive design approach</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">What I Learned</h6>
+                                <p>Building ForWriters taught me how to design complex social features, handle database relationships at scale, and create user experiences for content-heavy platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all">
+                        <div class="flex justify-between items-start flex-wrap gap-4 mb-4">
+                            <div>
+                                <h5 class="text-xl font-semibold mb-1 text-white">Learning Path Tracker</h5>
+                                <p class="text-white text-xs">Educational Goal-Setting App</p>
+                            </div>
+                            <a href="https://rahu.pythonanywhere.com" target="_blank" class="px-4 py-2 border border-amber-500 text-amber-500 rounded-full text-sm font-semibold hover:bg-amber-900/20 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                            </a>
+                        </div>
+                        <p class="text-base font-semibold mb-4 text-gray-300">This web app helps self-learners to track their progress and stay committed to their goals.</p>
+                        
+                        <div class="space-y-4 text-base text-gray-400">
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">The Challenge</h6>
+                                <p>Self-taught learners often lose motivation because they can't see their cumulative progress. They need a way to track their journey and celebrate small wins.</p>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">My Solution</h6>
+                                <p class="mb-2">I built a goal-tracking web application where users can:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Set learning goals with clear titles</li>
+                                    <li>Log daily progress with detailed notes</li>
+                                    <li>View their complete learning journey from start to finish</li>
+                                    <li>Stay motivated by seeing how far they've come</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">Technical Implementation</h6>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Django backend with SQLite database</li>
+                                    <li>User authentication and personalized dashboards</li>
+                                    <li>Clean, intuitive interface built with Bootstrap</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h6 class="font-semibold text-white mb-2">Personal Note</h6>
+                                <p>I created this tool while teaching myself Django. I was my own first user, and it genuinely helped me stay motivated during the challenging early days of learning. Seeing my progress accumulate day by day kept me going. Now others use it to track their own learning journeys.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="skillsets">
+                    <h5 class="text-2xl font-semibold mb-6 text-white">Technical Skills I got.</h5>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-base">
+                        <div>
+                            <h6 class="font-semibold mb-3 text-white">Frontend Development</h6>
+                            <ul class="text-sm text-gray-400 space-y-2">
+                                <li>• HTML5, CSS3, JavaScript</li>
+                                <li>• Responsive Web Design</li>
+                                <li>• Bootstrap Framework</li>
+                                <li>• User Interface Design</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6 class="font-semibold mb-3 text-white">Backend Development</h6>
+                            <ul class="text-sm text-gray-400 space-y-2">
+                                <li>• Python, Django</li>
+                                <li>• Django REST Framework</li>
+                                <li>• RESTful API Design</li>
+                                <li>• Authentication & Authorization</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6 class="font-semibold mb-3 text-white">Database Management</h6>
+                            <ul class="text-sm text-gray-400 space-y-2">
+                                <li>• PostgreSQL, MySQL, SQLite</li>
+                                <li>• Database Design & Modeling</li>
+                                <li>• Query Optimization</li>
+                                <li>• Data Integrity</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6 class="font-semibold mb-3 text-white">DevOps & Tools</h6>
+                            <ul class="text-sm text-gray-400 space-y-2">
+                                <li>• Git & GitHub (Version Control)</li>
+                                <li>• Docker (Containerization)</li>
+                                <li>• Linux Command Line</li>
+                                <li>• AWS, GCP</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-base">
+                        <h6 class="font-semibold mb-3 text-white">Currently Learning</h6>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-900 text-gray-300 px-4 py-2 rounded-full text-sm font-medium">Payment Gateway Integration (Stripe)</span>
+                            <span class="bg-gray-900 text-gray-300 px-4 py-2 rounded-full text-sm font-medium">AWS Cloud Services</span>
+                            <span class="bg-gray-900 text-gray-300 px-4 py-2 rounded-full text-sm font-medium">Advanced Django Optimization</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- What I Offer -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="service">
+                    <h5 class="text-2xl font-semibold mb-2 text-white">What I Offer</h5>
+                    <p class="text-gray-400 mb-6">Professional development services to bring your ideas to life</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all text-base">
+                            <div class="text-4xl mb-3">💻</div>
+                            <h6 class="font-semibold mb-2 text-white">Full-Stack Web Development</h6>
+                            <p class="text-gray-400">Building complete web applications from database design to user interface, using Django, Python, and PostgreSQL.</p>
+                        </div>
+                        <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all text-base">
+                            <div class="text-4xl mb-3">🛒</div>
+                            <h6 class="font-semibold mb-2 text-white">E-commerce Solutions</h6>
+                            <p class="text-gray-400">Creating online stores with product management, shopping carts, secure payment processing, and order tracking.</p>
+                        </div>
+                        <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all text-base">
+                            <div class="text-4xl mb-3">🔌</div>
+                            <h6 class="font-semibold mb-2 text-white">RESTful API Development</h6>
+                            <p class="text-gray-400">Designing and implementing scalable APIs for web and mobile applications with proper authentication.</p>
+                        </div>
+                        <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all text-base">
+                            <div class="text-4xl mb-3">🗄️</div>
+                            <h6 class="font-semibold mb-2 text-white">Database Design & Optimization</h6>
+                            <p class="text-gray-400">Structuring efficient databases and optimizing queries for performance and scalability.</p>
+                        </div>
+                        <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all text-base">
+                            <div class="text-4xl mb-3">☁️</div>
+                            <h6 class="font-semibold mb-2 text-white">Deployment & DevOps</h6>
+                            <p class="text-gray-400">Setting up production environments, containerization with Docker, and deploying to cloud platforms.</p>
+                        </div>
+                        <div class="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all text-base">
+                            <div class="text-4xl mb-3">🔍</div>
+                            <h6 class="font-semibold mb-2 text-white">Code Review & Consultation</h6>
+                            <p class="text-gray-400">Reviewing existing codebases for optimization opportunities and providing technical guidance.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-6 bg-gray-900 rounded-xl border border-gray-800 hover:border-gray-700 transition-all text-base">
+                        <h5 class="text-lg font-semibold mb-2 text-white">My Approach</h5>
+                        <p class="text-gray-400 mb-2">I believe in clear communication, writing clean maintainable code, and delivering solutions that actually work. I focus on understanding your specific needs and then implementation.</p>
+                        <p class="text-white font-semibold">I primarily work with Django and Python, but I can choose and implement the right tools based on your project requirements.</p>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="education">
+                    <h5 class="text-2xl font-semibold mb-6 text-white">Education & Certifications</h5>
+                    
+                    <div class="mb-6 pb-6 border-b border-gray-800">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-4xl text-amber-500"></i>
+                            </div>
+                            <div class="flex-grow text-base">
+                                <h6 class="font-semibold mb-1 text-white">Bachelor of Science in Physics</h6>
+                                <p class="text-gray-400 mb-2">Jahangirnagar University, Dhaka, Bangladesh | Graduated 2017</p>
+                                <p class="text-gray-400">During my undergraduate studies, I discovered programming and taught myself Python. What started as curiosity turned into a passion. I spent countless hours learning web development alongside my physics coursework, eventually building software turned into my true profession.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="text-xl font-semibold mb-4 text-white">Professional Certifications</h5>
+                        
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border border-gray-800 rounded-xl p-4 hover:border-gray-700 transition-all">
+                            <div class="flex gap-3 mb-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/120px-Google_2015_logo.svg.png" alt="Google" class="w-16 h-auto object-contain bg-white p-1 rounded">
+                                <div class="text-base">
+                                    <h6 class="font-semibold mb-1 text-white">Crash Course on Python</h6>
+                                    <p class="text-gray-400">Google (via Coursera)</p>
+                                </div>
+                            </div>
+                            <p class="text-base text-gray-400 mb-3">Comprehensive introduction to Python programming covering syntax, data structures, functions, and object-oriented programming fundamentals.</p>
+                            <button class="w-full px-4 py-2 border border-amber-500 text-amber-500 rounded-lg text-sm font-semibold hover:bg-amber-900/20 transition-colors">
+                                <i class="fas fa-certificate mr-2"></i>View Certificate
+                            </button>
+                        </div>
+
+                        <div class="border border-gray-800 rounded-xl p-4 hover:border-gray-700 transition-all">
+                            <div class="flex gap-3 mb-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/120px-LinkedIn_logo_initials.png" alt="LinkedIn Learning" class="w-16 h-auto object-contain bg-white p-1 rounded">
+                                <div>
+                                    <h6 class="font-semibold mb-1 text-white">Building RESTful Web APIs With Django</h6>
+                                    <p class="text-base text-gray-400">LinkedIn Learning</p>
+                                </div>
+                            </div>
+                            <p class="text-base text-gray-400 mb-3">Advanced training in Django REST Framework covering serializers, viewsets, authentication, permissions, and API documentation for scalable backends.</p>
+                            <button class="w-full px-4 py-2 border border-amber-500 text-amber-500 rounded-lg text-sm font-semibold hover:bg-amber-900/20 transition-colors">
+                                <i class="fas fa-certificate mr-2"></i>View Certificate
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-gray-700 transition-all">
+                        <p class="text-base text-gray-400 italic mb-0">
+                            <i class="fas fa-lightbulb mr-2 text-yellow-500"></i>
+                            <strong>Continuous Learning:</strong> I'm a firm believer in lifelong learning. Beyond formal certifications, I regularly explore new technologies, contribute to open-source projects, and build personal projects to expand my skill set.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section class="bg-[#1f1e1d] rounded-2xl border border-gray-800 hover:border-gray-700 transition-all p-8" id="mail-me">
+                    <h5 class="text-2xl font-semibold mb-2 text-white">Let's Work Together</h5>
+                    <p class="text-base text-gray-400 mb-6">Whether you have a project in mind, need technical consultation, or just want to connect, I'd love to hear from you.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="text-lg font-semibold mb-4 text-white">Send Me a Message</h5>
+                            <div id="alert-container"></div>
+                            <form id="contactForm" class="space-y-4">
+                                {% csrf_token %}
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold mb-2 text-gray-300">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your name" required class="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-800 hover:border-gray-700 transition-all text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold mb-2 text-gray-300">Your Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Your email" required class="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-800 hover:border-gray-700 transition-all text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-semibold mb-2 text-gray-300">Message</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Message for me .." required class="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-800 hover:border-gray-700 transition-all text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"></textarea>
+                                </div>
+                                <button type="submit" class="flex justify-center w-full px-6 py-3 bg-amber-600 text-white text-center rounded-lg font-semibold hover:bg-amber-700 transition-colors" id="submitBtn">
+                                    <span id="btnText" class="flex items-center">
+                                        <i class="fas fa-paper-plane mr-2"></i>
+                                        Send to me
+                                    </span>
+                                    
+                                    <span id="btnSpinner" class="hidden">
+                                        <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div>
+                            <h6 class="text-lg font-semibold mb-4 text-white">Contact Information</h6>
+                            <div class="space-y-4">
+                                <div class="border border-gray-800 hover:border-gray-700 transition-all rounded-lg p-4 flex items-center gap-4">
+                                    <i class="fas fa-envelope text-2xl text-amber-500"></i>
+                                    <div>
+                                        <div class="text-xs text-gray-400 mb-1">Email</div>
+                                        <div class="font-semibold text-white">
+                                            <a href="mailto:rahu.exp@gmail.com" class="hover:text-amber-500 transition-colors">rahu.exp@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border border-gray-800 hover:border-gray-700 transition-all rounded-lg p-4 flex items-center gap-4">
+                                    <i class="fas fa-phone text-2xl text-amber-500"></i>
+                                    <div>
+                                        <div class="text-xs text-gray-400 mb-1">Phone</div>
+                                        <div class="font-semibold text-white">
+                                            <a href="tel:+8801722389452" class="hover:text-amber-500 transition-colors">+880 1722 389452</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border border-gray-800 hover:border-gray-700 transition-all rounded-lg p-4 flex items-center gap-4">
+                                    <i class="fab fa-linkedin text-2xl text-amber-500"></i>
+                                    <div>
+                                        <div class="text-xs text-gray-400 mb-1">LinkedIn</div>
+                                        <div class="font-semibold text-white">
+                                            <a href="https://linkedin.com/in/rahu" target="_blank" class="hover:text-amber-500 transition-colors">linkedin.com/in/rahu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border border-gray-800 hover:border-gray-700 transition-all rounded-lg p-4 flex items-center gap-4">
+                                    <i class="fab fa-github text-2xl text-amber-500"></i>
+                                    <div>
+                                        <div class="text-xs text-gray-400 mb-1">GitHub</div>
+                                        <div class="font-semibold text-white">
+                                            <a href="https://github.com/Rahu-ju" target="_blank" class="hover:text-amber-500 transition-colors">github.com/Rahu-ju</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-gray-700 transition-all text-center">
+                        <p class="text-sm mb-1 text-white"><strong>Response Time:</strong> I typically respond within 24 hours.</p>
+                        <p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i>Based in Dhaka, Bangladesh | Open to remote opportunities worldwide</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer
+    <footer class="bg-[#0d0d0d] border-t border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-400">
+            <p>&copy; 2025 Imran Hossain Rahu. All rights reserved.</p>
+        </div>
+    </footer> -->
+    <script>
+        // Smooth scroll for navigation with proper offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - navHeight - 34;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active nav item highlighting
+        const navItems = document.querySelectorAll('.sidebar-nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navItems.forEach(nav => {
+                    nav.classList.remove('border-amber-500', 'bg-gray-900', 'text-white');
+                    nav.classList.add('border-transparent', 'text-gray-400');
+                });
+                this.classList.remove('border-transparent', 'text-gray-400');
+                this.classList.add('border-amber-500', 'bg-gray-900', 'text-white');
+            });
+        });
+
+    </script>
+    <script src="{% static 'pages/ajax.js' %}"></script>
+</body>
+</html>
