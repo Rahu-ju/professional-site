@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 COPY . /app/
 
 # collect static files on build time
-RUN python manage.py collectstatic --no-input
+# RUN python manage.py collectstatic --no-input
 
 # Expose port (Render uses $PORT environment variable)
 EXPOSE 10000
